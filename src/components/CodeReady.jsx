@@ -16,7 +16,7 @@ export default function CodeReady({ type }) {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-6 text-center gap-6">
       <h1 className="text-3xl font-bold text-[#212121]">Kodunuz Hazır!</h1>
-      <p className="text-black text-sm md:text-lg max-w-lg">
+      <p className="text-black text-xs md:text-md max-w-lg">
         Kişisel indirim kodunuzu e-posta adresinize gönderdik.
         <br />
         Bu kodu, ödeme sayfasında ilgili alana girerek kullanabilirsiniz.

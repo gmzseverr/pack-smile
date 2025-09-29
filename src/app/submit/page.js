@@ -7,7 +7,6 @@ import CodeReady from "@/components/CodeReady";
 import DrawReady from "@/components/DrawReady";
 import NoEmail from "@/components/NoEmail";
 
-// This is a new, separate component that uses the searchParams hook
 function SubmitContent() {
   const searchParams = useSearchParams();
   const type = searchParams.get("type");
@@ -16,7 +15,7 @@ function SubmitContent() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2000);
+    const timer = setTimeout(() => setLoading(false), 1000);
     return () => clearTimeout(timer);
   }, []);
 
