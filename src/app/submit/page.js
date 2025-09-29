@@ -1,14 +1,14 @@
 "use client";
-export const dynamic = "force-dynamic"; // Sayfayı client-side render yapmaya zorluyor
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Loading from "@/components/Loading";
 import CodeReady from "@/components/CodeReady";
 import DrawReady from "@/components/DrawReady";
 import NoEmail from "@/components/NoEmail";
 
-export default function SubmitPage() {
+// This is a new, separate component that uses the searchParams hook
+function SubmitContent() {
   const searchParams = useSearchParams();
   const type = searchParams.get("type");
   const email = searchParams.get("email") || "";
@@ -29,10 +29,16 @@ export default function SubmitPage() {
     return <CodeReady type={type} />;
   }
 
-  // Varsayılan boş durum
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-6 text-center">
-      <p>Geçersiz sayfa.</p>
-    </div>
+    <div className="flex flex-col items-center justify-center min-h-screen p-6 text-center"></div>
+  );
+}
+
+// The main page component that wraps the content in a Suspense boundary
+export default function SubmitPage() {
+  return (
+    <Suspense fallback={<Loading />}>
+      <SubmitContent />
+    </Suspense>
   );
 }
