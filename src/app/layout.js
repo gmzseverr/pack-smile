@@ -15,7 +15,7 @@ const workSans = Work_Sans({
 });
 
 export const metadata = {
-  title: "Pock Smile",
+  title: "Pack Smile",
   description: "",
 };
 
