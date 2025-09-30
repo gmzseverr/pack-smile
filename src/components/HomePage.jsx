@@ -38,8 +38,8 @@ export default function HomePage() {
           {cards.map((card, index) => (
             <Link key={index} href={card.path} className="flex-1 w-full">
               <div
-                className="rounded-xl bg-[#CEE7FF] p-4 flex flex-col items-center gap-4
-                 shadow-md hover:scale-105 transition-transform duration-300 h-full"
+                className="rounded-xl bg-[#FBFEFF] p-4 flex flex-col items-center gap-4
+                 shadow-md hover:bg-darkBlue hover:scale-105 transition-transform duration-300 h-full"
               >
                 <div className="bg-white rounded-full w-16 h-16 flex items-center justify-center">
                   <img src={card.icon} alt={card.title} className="w-8 h-8" />
