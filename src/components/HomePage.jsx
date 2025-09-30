@@ -36,7 +36,7 @@ export default function HomePage() {
 
         <section className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 w-full">
           {cards.map((card, index) => (
-            <Link key={index} href={card.path} className="flex-1 w-full">
+            <Link key={index} href={card.path} className="flex-1 w-full group">
               <div
                 className="rounded-xl bg-[#FBFEFF] p-4 flex flex-col items-center gap-4
                  shadow-md hover:bg-darkBlue hover:scale-105 transition-transform duration-300 h-full"
@@ -45,11 +45,11 @@ export default function HomePage() {
                   <img src={card.icon} alt={card.title} className="w-8 h-8" />
                 </div>
 
-                <h3 className="text-darkBlue font-semibold text-lg text-center hover:text-white">
+                <h3 className="text-darkBlue font-semibold text-lg text-center group-hover:text-white">
                   {card.title}
                 </h3>
 
-                <p className="text-gray-500 text-sm text-center">
+                <p className="text-gray-500 text-sm text-center group-hover:text-white">
                   {card.description}
                 </p>
               </div>
