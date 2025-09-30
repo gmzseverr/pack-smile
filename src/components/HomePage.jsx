@@ -7,7 +7,7 @@ const cards = [
     title: "Çekilişe Katıl",
     description: "Ürün sayfamızı ziyaret et, çekilişe adını yazdır",
     icon: "/gift.png",
-    path: "/form/cekilis", // Yönlendirilecek yol
+    path: "/form/cekilis",
   },
   {
     title: "Anında %20 İndirim",
@@ -39,18 +39,17 @@ export default function HomePage() {
             <Link key={index} href={card.path} className="flex-1 w-full">
               <div
                 className="rounded-xl bg-[#FBFEFF] p-4 flex flex-col items-center gap-4
-                 shadow-md hover:bg-darkBlue hover:scale-105 transition-transform duration-300 h-full
-                 active:ring-2 active:ring-darkBlue active:ring-offset-2" // Yeni eklenen sınıflar
+                 shadow-md hover:bg-darkBlue hover:scale-105 transition-transform duration-300 h-full"
               >
                 <div className="bg-white rounded-full w-16 h-16 flex items-center justify-center">
                   <img src={card.icon} alt={card.title} className="w-8 h-8" />
                 </div>
 
-                <h3 className="text-darkBlue font-semibold text-lg text-center group-hover:text-white">
+                <h3 className="text-darkBlue font-semibold text-lg text-center hover:text-white">
                   {card.title}
                 </h3>
 
-                <p className="text-gray-500 text-sm text-center group-hover:text-white">
+                <p className="text-gray-500 text-sm text-center">
                   {card.description}
                 </p>
               </div>
