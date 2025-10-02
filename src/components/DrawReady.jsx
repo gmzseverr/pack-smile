@@ -38,7 +38,7 @@ export default function DrawReady() {
           ANASAYFAYA DÖN
         </button>
         <button
-          onClick={() => router.push("/products")}
+          onClick={() => router.push("/shop")}
           className="bg-[#E3963E] text-white p-2 font-semibold rounded transform transition-transform duration-200 hover:scale-105"
         >
           ÜRÜNLERİ İNCELE
