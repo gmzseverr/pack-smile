@@ -49,7 +49,7 @@ function ProductList() {
   const products = DUMMY_PRODUCTS;
 
   return (
-    <div className="container mx-auto pt-20 px-4">
+    <div className="container mx-auto py-20 px-4">
       {/* Hero Section */}
       <div
         className="flex flex-col-reverse lg:flex-row w-full items-center justify-between px-6 lg:px-12 py-8 rounded-2xl mb-10"
