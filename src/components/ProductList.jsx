@@ -13,7 +13,7 @@ import {
 const DUMMY_PRODUCTS = [
   {
     id: 1,
-    title: "Akıl Oyunları Kitabı",
+    title: "Ambalaj",
     price: 150.0,
     stock: 12,
     year: 2023,
@@ -21,7 +21,7 @@ const DUMMY_PRODUCTS = [
   },
   {
     id: 2,
-    title: "Kişisel Gelişim Defteri",
+    title: "Ambalaj",
     price: 99.5,
     stock: 5,
     year: 2024,
@@ -29,7 +29,7 @@ const DUMMY_PRODUCTS = [
   },
   {
     id: 3,
-    title: "Programlama Başlangıç Kılavuzu",
+    title: "Ambalaj",
     price: 249.9,
     stock: 0,
     year: 2022,
@@ -37,7 +37,7 @@ const DUMMY_PRODUCTS = [
   },
   {
     id: 4,
-    title: "Felsefi Denemeler Serisi",
+    title: "Ambalaj",
     price: 185.0,
     stock: 8,
     year: 2021,
