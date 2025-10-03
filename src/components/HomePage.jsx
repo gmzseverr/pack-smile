@@ -7,7 +7,7 @@ const cards = [
     title: "Çekilişe Katıl",
     description: "Ürün sayfamızı ziyaret et, çekilişe adını yazdır",
     icon: "/gift.png",
-    path: "/form/cekilis",
+    path: "/products/giveaway",
   },
   {
     title: "Anında %20 İndirim",
