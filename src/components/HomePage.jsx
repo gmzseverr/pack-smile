@@ -30,7 +30,7 @@ export default function HomePage() {
       <img src="/icon.png" className="w-24" alt="Icon" />
 
       <div className="flex flex-col items-center justify-between text-center gap-8 p-8 sm:p-12 rounded-2xl shadow-lg w-full max-w-5xl bg-white">
-        <h1 className="font-semibold text-darkBlue text-xl md:text-2xl">
+        <h1 className="font-semibold text-black text-xl md:text-2xl">
           Hoşgeldiniz! Aşağıdaki seçeneklerden birini seçiniz.
         </h1>
 
@@ -39,13 +39,13 @@ export default function HomePage() {
             <Link key={index} href={card.path} className="flex-1 w-full group">
               <div
                 className="rounded-xl bg-[#FBFEFF] p-4 flex flex-col items-center gap-4
-                 shadow-md hover:bg-darkBlue hover:scale-105 transition-transform duration-300 h-full"
+                 shadow-md hover:bg-black hover:scale-105 transition-transform duration-300 h-full"
               >
                 <div className="bg-white rounded-full w-16 h-16 flex items-center justify-center">
                   <img src={card.icon} alt={card.title} className="w-8 h-8" />
                 </div>
 
-                <h3 className="text-darkBlue font-semibold text-lg text-center group-hover:text-white">
+                <h3 className="text-black font-semibold text-lg text-center group-hover:text-white">
                   {card.title}
                 </h3>
 

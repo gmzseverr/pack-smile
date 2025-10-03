@@ -204,7 +204,7 @@ export default function FormPage({ type }) {
         )}
         <button
           type="submit"
-          className="bg-darkBlue font-semibold uppercase text-white p-2 rounded hover:bg-[#E3963E] transition"
+          className="bg-black font-semibold uppercase text-white p-2 rounded hover:bg-[#E3963E] transition"
         >
           {buttonText}
         </button>

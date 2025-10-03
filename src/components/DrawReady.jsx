@@ -33,7 +33,7 @@ export default function DrawReady() {
       <div className="flex flex-col gap-4 w-full max-w-md">
         <button
           onClick={() => router.push("/")}
-          className="bg-darkBlue text-white p-2 font-semibold rounded transform transition-transform duration-200 hover:scale-105"
+          className="bg-black text-white p-2 font-semibold rounded transform transition-transform duration-200 hover:scale-105"
         >
           ANASAYFAYA DÖN
         </button>

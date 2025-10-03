@@ -26,7 +26,7 @@ export default function NoEmail({ type }) {
       <div className="flex flex-col gap-4 w-full pt-12 max-w-md">
         <button
           onClick={() => router.push("/")}
-          className="bg-darkBlue text-white p-2 font-semibold rounded hover:scale-105 transition transform"
+          className="bg-black text-white p-2 font-semibold rounded hover:scale-105 transition transform"
         >
           ANASAYFAYA DÖN
         </button>

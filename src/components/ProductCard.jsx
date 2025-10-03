@@ -42,7 +42,7 @@ export function ProductCard({ product }) {
   const [isLiked, setIsLiked] = useState(false);
   const handleLikeToggle = () => setIsLiked(!isLiked);
 
-  const darkBlueHex = "#1e3a8a";
+  const blackHex = "black";
   const rating = 4;
   const totalReviews = 2;
 
@@ -114,7 +114,7 @@ export function ProductCard({ product }) {
             <p className="text-xs text-gray-500 mt-0.5">{product.stock} kutu</p>
           </div>
           {/* Fiyat sağa yaslı */}
-          <p className="font-extrabold text-xl" style={{ color: darkBlueHex }}>
+          <p className="font-extrabold text-xl" style={{ color: black }}>
             {product.price} TL
           </p>
         </div>
@@ -151,8 +151,8 @@ export function ProductCard({ product }) {
           variant="outline"
           className="cursor-pointer flex-1 text-base hover:bg-gray-100 transition-colors"
           style={{
-            borderColor: darkBlueHex,
-            color: darkBlueHex,
+            borderColor: black,
+            color: black,
             backgroundColor: "white",
             width: "128px",
             height: "36px",
