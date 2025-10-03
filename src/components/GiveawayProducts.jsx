@@ -13,13 +13,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
 
 // Font Awesome ikonlarını import ediyoruz
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
-// Varsayımsal ikon bileşenleri (kod burada değişmedi)
+// Varsayımsal ikon bileşenleri (Heart ve Star)
 const Heart = (props) => (
   <svg
     {...props}
@@ -13,6 +13,7 @@ const Heart = (props) => (
     width="20"
     height="20"
     viewBox="0 0 24 24"
+    fill="none" // SVG'yi sadece stroke ile kullanmak için fill'i none yaptık
     stroke="currentColor"
     strokeWidth="2"
     strokeLinecap="round"
@@ -42,7 +43,6 @@ export function ProductCard({ product }) {
   const [isLiked, setIsLiked] = useState(false);
   const handleLikeToggle = () => setIsLiked(!isLiked);
 
-  const blackHex = "black";
   const rating = 4;
   const totalReviews = 2;
 
@@ -63,22 +63,21 @@ export function ProductCard({ product }) {
   };
 
   return (
-    // CARD STİLİ GÜNCELLEMELERİ
     <Card
       className="bg-[#F7F5F7] p-4 shadow-none border-none group flex flex-col justify-between"
       style={{
+        // Kartın sınır rengi arka plan rengiyle aynı tutularak yumuşak bir görünüm sağlar
         border: "1.54px solid #F7F5F7",
       }}
     >
       {/* 1. Görsel Alanı ve Fav Butonu */}
-      {/* DEĞİŞİKLİK 1: h-48 yerine h-60 (daha büyük görsel alanı) */}
       <div className="mb-4 relative h-60">
         {/* Görsel Alanı */}
         <div className="w-full h-full bg-gray-300 rounded-lg flex items-center justify-center overflow-hidden">
           <img
             src={product.imageUrl}
             alt={product.title}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" // Hover efekti eklendi
           />
           {!product.imageUrl && (
             <span className="text-sm text-gray-600">Ürün Görseli</span>
@@ -89,21 +88,20 @@ export function ProductCard({ product }) {
         <Button
           variant="ghost"
           size="icon"
-          className="absolute cursor-pointer top-2 right-2 rounded-full w-8 h-8 bg-white/80 hover:bg-white z-10 p-0"
+          className="absolute cursor-pointer top-2 right-2 rounded-full w-8 h-8 bg-white/80 hover:bg-white z-10 p-0 shadow-sm"
           onClick={handleLikeToggle}
         >
           <Heart
             className={`w-4 h-4 transition-colors ${
               isLiked
                 ? "text-red-500 fill-red-500"
-                : "text-gray-700 fill-transparent"
+                : "text-gray-700 hover:text-red-500 fill-transparent" // Hover rengi eklendi
             }`}
           />
         </Button>
       </div>
 
       {/* 2. Başlık, Adet, Fiyat ve Yıldızlar */}
-      {/* DEĞİŞİKLİK 2: CardContent'in alt boşluğu kaldırıldı (mb-4 yerine p-0) */}
       <CardContent className="p-0 flex-grow">
         {/* Başlık (Ambalaj) ve Adet (2 kutu) */}
         <div className="flex justify-between items-start mb-2">
@@ -114,7 +112,8 @@ export function ProductCard({ product }) {
             <p className="text-xs text-gray-500 mt-0.5">{product.stock} kutu</p>
           </div>
           {/* Fiyat sağa yaslı */}
-          <p className="font-extrabold text-xl" style={{ color: black }}>
+          {/* ✅ HATA DÜZELTİLDİ: "black" string olarak kullanıldı */}
+          <p className="font-extrabold text-xl" style={{ color: "black" }}>
             {product.price} TL
           </p>
         </div>
@@ -127,17 +126,15 @@ export function ProductCard({ product }) {
       </CardContent>
 
       {/* 3. Sepete Ekle ve Favorilere Ekle Butonları */}
-      {/* DEĞİŞİKLİK 3: mt-auto yerine mt-2 (butonlar ile üst içerik arasındaki boşluğu kontrol eder) */}
       <CardFooter
-        className="p-0 flex justify-between mt-2"
+        className="p-0 flex flex-col sm:flex-row justify-between mt-2" // Mobil uyum için flex-col eklendi
         style={{ gap: "8px" }}
       >
-        {/* Butonlar */}
+        {/* Sepete Ekle Butonu */}
         <Button
-          className="cursor-pointer flex-1 text-base hover:opacity-90 transition-opacity"
+          className="cursor-pointer flex-1 text-base hover:opacity-90 transition-opacity w-full sm:w-auto"
           style={{
             background: "#3A4980",
-            width: "128px",
             height: "36px",
             borderRadius: "50px",
             border: "1px solid transparent",
@@ -147,14 +144,14 @@ export function ProductCard({ product }) {
           Sepete ekle
         </Button>
 
+        {/* Favorilere Ekle Butonu */}
         <Button
           variant="outline"
-          className="cursor-pointer flex-1 text-base hover:bg-gray-100 transition-colors"
+          className="cursor-pointer flex-1 text-base hover:bg-gray-100 transition-colors w-full sm:w-auto"
           style={{
-            borderColor: black,
-            color: black,
+            borderColor: "black",
+            color: "black",
             backgroundColor: "white",
-            width: "128px",
             height: "36px",
             borderRadius: "50px",
             borderWidth: "1px",
