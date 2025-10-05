@@ -18,7 +18,7 @@ export default function Header() {
         </Link>
 
         {/* Yazı */}
-        <p className="text-black text-xs sm:text-sm lg:text-lg text-center sm:text-left">
+        <p className="text-[#1D1D1B] text-xs sm:text-sm lg:text-lg text-center sm:text-left">
           Harika fikirler için, harika paketler
         </p>
       </div>

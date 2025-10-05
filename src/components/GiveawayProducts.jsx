@@ -112,7 +112,7 @@ export default function GiveawayProducts() {
                   variant="ghost"
                   size="icon"
                   onClick={(e) => openDetailsModal(product, e)}
-                  className="text-black cursor-pointer hover:text-black rounded-full hover:bg-gray-100"
+                  className="text-[#1D1D1B] cursor-pointer hover:text-[#1D1D1B] rounded-full hover:bg-gray-100"
                   aria-label={`${product.name} detaylarını gör`}
                 >
                   <FontAwesomeIcon icon={faSearch} className="h-4 w-4" />
@@ -140,15 +140,17 @@ export default function GiveawayProducts() {
       <Button
         onClick={handleParticipate}
         disabled={!selectedProduct}
-        className={`mt-8 px-8 py-3 font-semibold text-base transition duration-300 
-        ${selectedProduct ? "cursor-pointer" : "cursor-not-allowed"}
-      `}
-        style={{ backgroundColor: selectedProduct ? "black" : "#cccccc" }}
+        className={`mt-8 px-8 py-3 font-semibold text-base transition duration-300 ${
+          selectedProduct
+            ? "bg-[#1D1D1B] text-white cursor-pointer hover:opacity-90"
+            : "bg-gray-300 text-gray-500 cursor-not-allowed"
+        }`}
       >
         {selectedProduct
           ? `"${selectedProduct.name}" Çekilişine Katıl`
           : "Lütfen Bir Ürün Seçin"}
       </Button>
+
       <ProductDetailModal
         isOpen={isModalOpen}
         onClose={setIsModalOpen}
