@@ -47,7 +47,7 @@ const PRODUCTS = [
 export default function ProductList() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const discount = searchParams.get("discount") || 0;
+  const discount = searchParams?.get("discount") || 0;
 
   const [modalProduct, setModalProduct] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
