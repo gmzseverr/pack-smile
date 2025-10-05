@@ -1,18 +1,12 @@
 "use client";
 
+import React, { Suspense } from "react";
 import ProductList from "@/components/ProductList";
-import { useParams } from "next/navigation";
 
-import React from "react";
-
-function ProductsPage() {
-  const params = useParams();
-  const type = params.type;
+export default function ProductsPage() {
   return (
-    <div>
+    <Suspense fallback={<p>Yükleniyor...</p>}>
       <ProductList />
-    </div>
+    </Suspense>
   );
 }
-
-export default ProductsPage;
