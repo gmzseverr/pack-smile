@@ -17,28 +17,62 @@ const PRODUCTS = [
   {
     id: 1,
     title: "Ambalaj A",
-    description: "Baskı kalitesi yüksek...",
+    description: "Baskı kalitesi yüksek, çevre dostu ambalaj çözümü.",
     details: "Ambalaj A...",
     imageUrl: "/package.jpg",
   },
   {
     id: 2,
     title: "Ambalaj B",
-    description: "Kilitli kapaklı...",
+    description:
+      "Kilitli kapaklı, dayanıklı ve tekrar kullanılabilir. Bu açıklama, kart üzerinde daha fazla yer kaplayacaktır.",
     details: "Ambalaj B...",
     imageUrl: "/package.jpg",
   },
   {
     id: 3,
     title: "Ambalaj C",
-    description: "Minimalist tasarım...",
+    description:
+      "Minimalist tasarım, özel günler için ideal. Bu ürün, diğerlerinden daha az açıklamaya sahiptir.",
     details: "Ambalaj C...",
     imageUrl: "/package.jpg",
   },
   {
     id: 4,
     title: "Ambalaj D",
-    description: "Ekstra dayanıklı...",
+    description:
+      "Minimalist tasarım, özel günler için ideal. Bu ürün, diğerlerinden daha az açıklamaya sahiptir.",
+    details: "Ambalaj D...",
+    imageUrl: "/package.jpg",
+  },
+  {
+    id: 5,
+    title: "Ambalaj A",
+    description: "Baskı kalitesi yüksek, çevre dostu ambalaj çözümü.",
+    details: "Ambalaj A...",
+    imageUrl: "/package.jpg",
+  },
+  {
+    id: 6,
+    title: "Ambalaj B",
+    description:
+      "Kilitli kapaklı, dayanıklı ve tekrar kullanılabilir. Bu açıklama, kart üzerinde daha fazla yer kaplayacaktır.",
+    details: "Ambalaj B...",
+    imageUrl: "/package.jpg",
+  },
+  {
+    id: 7,
+    title: "Ambalaj C",
+    description:
+      "Minimalist tasarım, özel günler için ideal. Bu ürün, diğerlerinden daha az açıklamaya sahiptir.",
+    details: "Ambalaj C...",
+    imageUrl: "/package.jpg",
+  },
+  {
+    id: 8,
+    title: "Ambalaj D",
+    description:
+      "Minimalist tasarım, özel günler için ideal. Bu ürün, diğerlerinden daha az açıklamaya sahiptir.",
     details: "Ambalaj D...",
     imageUrl: "/package.jpg",
   },
