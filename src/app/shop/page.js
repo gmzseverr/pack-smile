@@ -1,15 +1,12 @@
 "use client";
 
+import React, { Suspense } from "react";
 import ProductList from "@/components/ProductList";
-import { useParams } from "next/navigation";
 
-export default function ShopPage() {
-  const params = useParams();
-  const type = params.type;
-
+export default function ProductsPage() {
   return (
-    <div className="pt-4 md:pt-12">
+    <Suspense fallback={<div>Yükleniyor...</div>}>
       <ProductList />
-    </div>
+    </Suspense>
   );
 }

@@ -17,29 +17,29 @@ const PRODUCTS = [
   {
     id: 1,
     title: "Ambalaj A",
-    description: "Baskı kalitesi yüksek, çevre dostu ambalaj çözümü.",
-    details: "Ambalaj A, geri dönüştürülmüş kağıttan üretilmiştir...",
+    description: "Baskı kalitesi yüksek...",
+    details: "Ambalaj A...",
     imageUrl: "/package.jpg",
   },
   {
     id: 2,
     title: "Ambalaj B",
-    description: "Kilitli kapaklı, dayanıklı ve tekrar kullanılabilir.",
-    details: "Ambalaj B, biyoplastik malzemeden yapılmıştır...",
+    description: "Kilitli kapaklı...",
+    details: "Ambalaj B...",
     imageUrl: "/package.jpg",
   },
   {
     id: 3,
     title: "Ambalaj C",
-    description: "Minimalist tasarım, özel günler için ideal.",
-    details: "Ambalaj C, özel parlak kaplama ile kaplanmıştır...",
+    description: "Minimalist tasarım...",
+    details: "Ambalaj C...",
     imageUrl: "/package.jpg",
   },
   {
     id: 4,
     title: "Ambalaj D",
-    description: "Ekstra dayanıklı ve suya dayanıklı.",
-    details: "Ambalaj D, özel parlak kaplama ile kaplanmıştır...",
+    description: "Ekstra dayanıklı...",
+    details: "Ambalaj D...",
     imageUrl: "/package.jpg",
   },
 ];
@@ -64,13 +64,8 @@ export default function ProductList() {
 
   return (
     <div className="container mx-auto py-20 px-4">
-      {/* Hero / Banner */}
-      <div
-        className="flex flex-col-reverse lg:flex-row items-center justify-between
-  bg-gradient-to-r from-[#E4E9F2] via-[#F1F4F9] to-[#E1EEFF] 
-  rounded-2xl px-6 lg:px-12 py-8 mb-10"
-      >
-        {/* Sol taraf: metin + buton */}
+      {/* Banner */}
+      <div className="flex flex-col-reverse lg:flex-row items-center justify-between bg-gradient-to-r from-[#E4E9F2] via-[#F1F4F9] to-[#E1EEFF] rounded-2xl px-6 lg:px-12 py-8 mb-10">
         <div className="w-full lg:w-1/2 flex flex-col items-start justify-center space-y-4 text-center lg:text-left">
           <h1 className="text-2xl lg:text-3xl font-semibold text-[#1D1D1B]">
             Küçük ve Büyüyen İşletmeler için sürdürülebilir ambalaj çözümleri.
@@ -78,12 +73,11 @@ export default function ProductList() {
           <p className="text-gray-600 text-sm lg:text-base">
             %{discount} İndirim Kuponu Alabileceğiniz Özel Ambalaj Ürünleri
           </p>
-          <Button className="px-8 py-3 text-base font-semibold bg-[#1D1D1B] hover:bg-[#333333] transition-colors cursor-pointer">
+          <Button className="px-8 py-3 text-base font-semibold bg-[#1D1D1B] hover:bg-[#333333]">
             Alışverişe Başla
           </Button>
         </div>
 
-        {/* Sağ taraf: görsel */}
         <div className="w-full lg:w-1/3 flex justify-center mb-6 lg:mb-0">
           <img
             src="/image-shop-page.png"
@@ -109,7 +103,7 @@ export default function ProductList() {
         ))}
       </section>
 
-      {/* Ürün Kartları */}
+      {/* Product Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8 mb-10">
         {PRODUCTS.map((product) => (
           <ProductCard
@@ -120,7 +114,7 @@ export default function ProductList() {
         ))}
       </div>
 
-      {/* Kupon Al Butonu */}
+      {/* Coupon Button */}
       <div className="flex justify-center mt-6">
         <Button
           onClick={handleGetCoupon}
@@ -130,7 +124,7 @@ export default function ProductList() {
         </Button>
       </div>
 
-      {/* Detay Modal */}
+      {/* Detail Modal */}
       <ProductDetailModal
         isOpen={isModalOpen}
         onClose={setIsModalOpen}
