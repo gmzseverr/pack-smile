@@ -1,3 +1,5 @@
+// components/GiveawayProducts.jsx (Güncellenmiş Versiyon)
+
 "use client";
 
 import React, { useState } from "react";
@@ -20,6 +22,8 @@ const products = [
     description: "Baskı kalitesi yüksek, çevre dostu ambalaj çözümü.",
     details:
       "Ambalaj A, geri dönüştürülmüş kağıttan üretilmiştir ve gıda temasına uygundur. Kapasite: 500ml. Bu detaylar modal içinde uzun bir metin olarak görünecektir.",
+    imageUrl: "/package.jpg", // Kart görseli
+    imageDetail: "/detay1.png", // Modal görseli
   },
   {
     id: 2,
@@ -28,6 +32,8 @@ const products = [
       "Kilitli kapaklı, dayanıklı ve tekrar kullanılabilir. Bu açıklama, kart üzerinde daha fazla yer kaplayacaktır.",
     details:
       "Ambalaj B, biyoplastik malzemeden yapılmıştır, mikrodalga fırına dayanıklıdır. Kapasite: 750ml.",
+    imageUrl: "/package.jpg",
+    imageDetail: "/detay2.png",
   },
   {
     id: 3,
@@ -36,6 +42,8 @@ const products = [
       "Minimalist tasarım, özel günler için ideal. Bu ürün, diğerlerinden daha az açıklamaya sahiptir.",
     details:
       "Ambalaj C, özel parlak kaplama ile kaplanmıştır ve şık bir görünüm sunar. Kapasite: 250ml.",
+    imageUrl: "/package.jpg",
+    imageDetail: "/detay3.png",
   },
 ];
 
@@ -86,7 +94,8 @@ export default function GiveawayProducts() {
             {/* Görsel */}
             <div className="w-full relative flex items-center justify-center">
               <Image
-                src="/package.jpg"
+                // 🚀 DÜZELTME: Kart görseli için product.imageUrl kullanıldı
+                src={product.imageUrl}
                 alt={product.name}
                 width={600}
                 height={400}
@@ -136,7 +145,7 @@ export default function GiveawayProducts() {
         disabled={!selectedProduct}
         className={`mt-8 px-8 py-3 font-semibold text-base transition duration-300 ${
           selectedProduct
-            ? "bg-[#1D1D1B] text-white cursor-pointer hover:opacity-90"
+            ? "bg-[#1D1D1B] text-white cursor-pointer hover:bg-[#E3963E] "
             : "bg-gray-300 text-gray-500 cursor-not-allowed"
         }`}
       >

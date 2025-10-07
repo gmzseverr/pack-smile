@@ -5,13 +5,6 @@ import { useRouter, useSearchParams } from "next/navigation";
 import ProductCard from "./ProductCard";
 import ProductDetailModal from "./ProductDetailModal";
 import { Button } from "@/components/ui/button";
-import {
-  Select,
-  SelectTrigger,
-  SelectValue,
-  SelectContent,
-  SelectItem,
-} from "@/components/ui/select";
 
 const PRODUCTS = [
   {
@@ -20,6 +13,7 @@ const PRODUCTS = [
     description: "Baskı kalitesi yüksek, çevre dostu ambalaj çözümü.",
     details: "Ambalaj A...",
     imageUrl: "/package.jpg",
+    imageDetail: "/detay1.png",
   },
   {
     id: 2,
@@ -28,6 +22,7 @@ const PRODUCTS = [
       "Kilitli kapaklı, dayanıklı ve tekrar kullanılabilir. Bu açıklama, kart üzerinde daha fazla yer kaplayacaktır.",
     details: "Ambalaj B...",
     imageUrl: "/package.jpg",
+    imageDetail: "/detay2.png",
   },
   {
     id: 3,
@@ -36,6 +31,7 @@ const PRODUCTS = [
       "Minimalist tasarım, özel günler için ideal. Bu ürün, diğerlerinden daha az açıklamaya sahiptir.",
     details: "Ambalaj C...",
     imageUrl: "/package.jpg",
+    imageDetail: "/detay3.png",
   },
   {
     id: 4,
@@ -44,6 +40,7 @@ const PRODUCTS = [
       "Minimalist tasarım, özel günler için ideal. Bu ürün, diğerlerinden daha az açıklamaya sahiptir.",
     details: "Ambalaj D...",
     imageUrl: "/package.jpg",
+    imageDetail: "/detay1.png",
   },
   {
     id: 5,
@@ -51,6 +48,7 @@ const PRODUCTS = [
     description: "Baskı kalitesi yüksek, çevre dostu ambalaj çözümü.",
     details: "Ambalaj A...",
     imageUrl: "/package.jpg",
+    imageDetail: "/detay2.png",
   },
   {
     id: 6,
@@ -59,6 +57,7 @@ const PRODUCTS = [
       "Kilitli kapaklı, dayanıklı ve tekrar kullanılabilir. Bu açıklama, kart üzerinde daha fazla yer kaplayacaktır.",
     details: "Ambalaj B...",
     imageUrl: "/package.jpg",
+    imageDetail: "/detay1.png",
   },
   {
     id: 7,
@@ -67,6 +66,7 @@ const PRODUCTS = [
       "Minimalist tasarım, özel günler için ideal. Bu ürün, diğerlerinden daha az açıklamaya sahiptir.",
     details: "Ambalaj C...",
     imageUrl: "/package.jpg",
+    imageDetail: "/detay3.png",
   },
   {
     id: 8,
@@ -75,6 +75,7 @@ const PRODUCTS = [
       "Minimalist tasarım, özel günler için ideal. Bu ürün, diğerlerinden daha az açıklamaya sahiptir.",
     details: "Ambalaj D...",
     imageUrl: "/package.jpg",
+    imageDetail: "/detay1.png",
   },
 ];
 
@@ -99,7 +100,7 @@ export default function ProductList() {
   return (
     <div className="container mx-auto py-20 px-4">
       {/* Banner */}
-      <div className="flex flex-col-reverse lg:flex-row items-center justify-between bg-gradient-to-r from-[#E4E9F2] via-[#F1F4F9] to-[#E1EEFF] rounded-2xl px-6 lg:px-12 py-8 mb-10">
+      <div className="flex flex-col-reverse lg:flex-row items-center justify-between bg-gradient-to-tr from-[#FCEFDD] via-[#FFFDFB]   to-[#fffaf4] rounded-2xl px-6 lg:px-12 py-8 mb-10">
         <div className="w-full lg:w-1/2 flex flex-col items-start justify-center space-y-4 text-center lg:text-left">
           <h1 className="text-2xl lg:text-3xl font-semibold text-[#1D1D1B]">
             Küçük ve Büyüyen İşletmeler için sürdürülebilir ambalaj çözümleri.
@@ -107,35 +108,21 @@ export default function ProductList() {
           <p className="text-gray-600 text-sm lg:text-base">
             %{discount} İndirim Kuponu Alabileceğiniz Özel Ambalaj Ürünleri
           </p>
-          <Button className="px-8 py-3 text-base font-semibold bg-[#1D1D1B] hover:bg-[#333333]">
+          <Button className="px-8 py-3 cursor-pointer text-base font-semibold bg-[#1D1D1B] hover:scale-110 ">
             Alışverişe Başla
           </Button>
         </div>
 
-        <div className="w-full lg:w-1/3 flex justify-center mb-6 lg:mb-0">
+        <div className="w-full lg:w-2/5 flex justify-center mb-6 lg:mb-0">
+          {" "}
+          {/* Daha fazla yer açmak için genişliği 2/5 yaptık */}
           <img
-            src="/image-shop-page.png"
+            src="/1.png"
             alt="Shop"
-            className="max-h-60 object-contain"
+            className="w-full max-h-80 lg:max-h-96 object-contain" // max-h değerini artırdık ve w-full ekledik
           />
         </div>
       </div>
-
-      {/* Filter Section */}
-      <section className="flex gap-2 mb-10 overflow-x-auto scrollbar-hide">
-        {["Ambalaj Tipi", "Fiyat", "Renk", "Malzeme"].map((filter, idx) => (
-          <Select key={idx}>
-            <SelectTrigger className="min-w-[130px] rounded-sm bg-gray-200 text-gray-700 px-4 py-2 hover:bg-gray-300 transition whitespace-nowrap">
-              <SelectValue placeholder={filter} />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="1">Seçenek 1</SelectItem>
-              <SelectItem value="2">Seçenek 2</SelectItem>
-              <SelectItem value="3">Seçenek 3</SelectItem>
-            </SelectContent>
-          </Select>
-        ))}
-      </section>
 
       {/* Product Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8 mb-10">
@@ -152,7 +139,7 @@ export default function ProductList() {
       <div className="flex justify-center mt-6">
         <Button
           onClick={handleGetCoupon}
-          className="px-8 py-3 text-base font-semibold bg-[#1D1D1B] hover:bg-[#E3963E]"
+          className="px-8 py-3 text-base font-semibold bg-[#1D1D1B] hover:bg-[#E3963E] cursor-pointer"
         >
           İNDİRİM KAZANMAK İÇİN KOD AL
         </Button>

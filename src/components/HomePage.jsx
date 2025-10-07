@@ -11,16 +11,16 @@ const cards = [
     path: "/products/giveaway",
   },
   {
-    title: "Anında %20 İndirim",
+    title: "Anında %25 İndirim",
     description: "Sadece fuar süresince geçerli kodu al",
     icon: "/sale.png",
-    discount: 20,
+    discount: 25,
   },
   {
-    title: "Anında %15 İndirim",
+    title: "Anında %10 İndirim",
     description: "Fuar sonrası 1 Ay boyunca geçerli kodu al",
     icon: "/sale.png",
-    discount: 15,
+    discount: 10,
   },
 ];
 
@@ -33,7 +33,6 @@ export default function HomePage() {
 
   return (
     <div className="font-sans flex flex-col items-center justify-center min-h-screen p-6 sm:p-12 gap-8 pt-24">
-      {/* Logo */}
       <img src="/icon.png" className="w-24" alt="Icon" />
 
       <div className="flex flex-col items-center justify-between text-center gap-8 p-8 sm:p-12 rounded-2xl shadow-lg w-full max-w-5xl bg-white">
@@ -50,10 +49,10 @@ export default function HomePage() {
                 className="flex-1 w-full group cursor-pointer"
               >
                 <div
-                  className="rounded-xl bg-[#FBFEFF] p-4 flex flex-col items-center gap-4
-                   shadow-md hover:bg-[#1D1D1B] hover:scale-105 transition-transform duration-300 h-full"
+                  className="rounded-xl bg-[#FFFEFB] p-4 flex flex-col items-center gap-4
+                   shadow-md hover:bg-[#E3963E] hover:scale-105 transition-transform duration-300 h-full"
                 >
-                  <div className="bg-white rounded-full w-16 h-16 flex items-center justify-center">
+                  <div className="bg-[#F8E1C4] rounded-full w-16 h-16 flex items-center justify-center">
                     <img src={card.icon} alt={card.title} className="w-8 h-8" />
                   </div>
 
@@ -73,10 +72,10 @@ export default function HomePage() {
                 className="flex-1 w-full group"
               >
                 <div
-                  className="rounded-xl bg-[#FBFEFF] p-4 flex flex-col items-center gap-4
-                   shadow-md hover:bg-[#1D1D1B] hover:scale-105 transition-transform duration-300 h-full"
+                  className="rounded-xl bg-[#FFFEFB] p-4 flex flex-col items-center gap-4
+                   shadow-md hover:bg-[#E3963E] hover:scale-105 transition-transform duration-300 h-full"
                 >
-                  <div className="bg-white rounded-full w-16 h-16 flex items-center justify-center">
+                  <div className="bg-[#F8E1C4] rounded-full w-16 h-16 flex items-center justify-center">
                     <img src={card.icon} alt={card.title} className="w-8 h-8" />
                   </div>
 

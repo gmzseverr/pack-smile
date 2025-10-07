@@ -1,3 +1,5 @@
+// components/NoEmail.jsx (Güncellenmiş Versiyon)
+
 "use client";
 import React from "react";
 import { useRouter } from "next/navigation";
@@ -5,21 +7,25 @@ import { useRouter } from "next/navigation";
 export default function NoEmail({ type }) {
   const router = useRouter();
 
-  // Geçerlilik mesajını type’a göre ayarlıyoruz
-  const validity =
-    type === "indirim-20"
-      ? "Kodunuz 25.12.2025 tarihine kadar geçerlidir."
-      : "Kodunuz 24 saat geçerlidir.";
+  // 🚀 GÜNCELLEME: İndirim tiplerine göre geçerlilik metni ayarlandı
+  let validity = "";
+  if (type === "indirim-25") {
+    validity = "Kodunuz 25.12.2025 tarihine kadar geçerlidir.";
+  } else if (type === "indirim-10") {
+    validity = "Kodunuz 24 saat geçerlidir."; // Aynı geçerlilik süresini kullandık
+  }
+  // Diğer tipler (örneğin cekilis) için bu sayfaya gelinmesi mantıksız olduğu için boş bırakılabilir.
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-6 text-center gap-6">
-      <img src="/true.png" alt="" />
+      {/* <img> yerine Next.js Image kullanmanızı tavsiye ederim */}
+      <img src="/true.png" alt="Onay İkonu" />
       <h1 className="text-xl md:text-3xl font-bold text-[#212121]">
         Kodu Stand Görevlisinden Alın
       </h1>
 
       <p className="text-gray-600 ">
-        E-posta girmediğiniz için indirim kodunuz stant görevlimiz tararından
+        E-posta girmediğiniz için indirim kodunuz stand görevlimiz tarafından
         verilecektir.
       </p>
 
@@ -31,6 +37,11 @@ export default function NoEmail({ type }) {
           ANASAYFAYA DÖN
         </button>
       </div>
+
+      {/* Ekstra bilgi olarak geçerliliği gösterebiliriz */}
+      {validity && (
+        <p className="text-gray-500 text-sm max-w-md mt-4">{validity}</p>
+      )}
     </div>
   );
 }

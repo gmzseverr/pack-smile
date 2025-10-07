@@ -45,26 +45,42 @@ export default function FormPage({ type }) {
       title = "Bilgileri Gir ve Çekilişe Hak Kazan";
       buttonText = "ÇEKİLİŞE KATIL";
       break;
-    case "indirim-20":
-      title = "Bilgileri Gir ve %20 İndirim Kazan";
+    case "indirim-25":
+      title = "Bilgileri Gir ve %25 İndirim Kazan";
       buttonText = "Kodu Al";
       break;
-    case "indirim-15":
-      title = "Bilgileri Gir ve %15 İndirim Kazan";
+    case "indirim-10":
+      title = "Bilgileri Gir ve %10 İndirim Kazan";
       buttonText = "Kodu Al";
       break;
     default:
       title = "Form";
       buttonText = "Gönder";
   }
-
   const onSubmit = (values) => {
     const validationErrors = validate(values);
     if (Object.keys(validationErrors).length) {
       setErrors(validationErrors);
       return;
     }
-    router.push(`/submit?type=${type}&email=${values.email || ""}`);
+
+    const emailProvided = values.email && values.email.trim() !== "";
+
+    sessionStorage.setItem(
+      "formSubmissionData",
+      JSON.stringify({
+        email: values.email || "",
+        name: values.name,
+      })
+    );
+
+    if (!emailProvided) {
+      router.push(`/no-email?type=${type}`);
+    } else {
+      const randomId = Date.now().toString(36);
+
+      router.push(`/submit?type=${type}&email=${randomId}`);
+    }
   };
 
   return (

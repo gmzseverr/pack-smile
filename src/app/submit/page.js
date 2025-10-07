@@ -23,7 +23,7 @@ function SubmitContent() {
 
   if (type === "cekilis") return <DrawReady />;
 
-  if (type === "indirim-20" || type === "indirim-15") {
+  if (type === "indirim-25" || type === "indirim-10") {
     if (!email) return <NoEmail type={type} />;
     return <CodeReady type={type} />;
   }

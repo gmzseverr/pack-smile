@@ -6,7 +6,7 @@ export default function Header() {
     <header
       className="w-full fixed z-50"
       style={{
-        background: "linear-gradient(to bottom, #E4E9F2, #FFFFFF)",
+        background: "linear-gradient(to bottom, #FCEFDD, #FFFDFB)",
       }}
     >
       <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between px-4 sm:px-6 py-3 sm:py-4 gap-2">

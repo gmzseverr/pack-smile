@@ -20,28 +20,21 @@ export default function DrawReady() {
         </div>
       </div>
 
-      {/* Başlık ve açıklama */}
-      <h1 className="text-3xl font-bold text-[#433E0E]">
-        Çekilişe Katıldınız!
+      <h1 className="text-3xl font-bold text-[#1D1D1B]">
+        Tebrikler, Çekilişe Katıldınız!
       </h1>
-      <p className="text-gray-600 max-w-md">
-        Katılımınız kaydedildi. <br />
-        Sonuçlar yakında açıklanacaktır.
+      <p className="text-[#1D1D1B] text-sm md:text-md max-w-lg">
+        Size özel çekiliş kodunuzu ve tüm detayları e-posta adresinize
+        gönderdik. <br /> Kutuyu veya spam klasörünü kontrol etmeyi unutmayın.
       </p>
 
       {/* Butonlar */}
       <div className="flex flex-col gap-4 w-full max-w-md">
         <button
           onClick={() => router.push("/")}
-          className="bg-black text-white p-2 font-semibold rounded transform transition-transform duration-200 hover:scale-105"
+          className="bg-[#1D1D1B] cursor-pointer text-white p-2 font-semibold rounded transform transition-transform duration-200 hover:scale-105"
         >
           ANASAYFAYA DÖN
-        </button>
-        <button
-          onClick={() => router.push("/shop")}
-          className="bg-[#E3963E] text-white p-2 font-semibold rounded transform transition-transform duration-200 hover:scale-105"
-        >
-          ÜRÜNLERİ İNCELE
         </button>
       </div>
     </div>

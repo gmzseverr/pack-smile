@@ -5,18 +5,18 @@ import { useRouter } from "next/navigation";
 
 export default function CodeReady({ type }) {
   const router = useRouter();
-  const kod = type === "indirim-20" ? "INDIRIM20" : "INDIRIM15";
+  const kod = type === "indirim-25" ? "INDIRIM25" : "INDIRIM10";
 
   // Geçerlilik tarihini type’a göre ayarlıyoruz
   const validity =
-    type === "indirim-20"
+    type === "indirim-25"
       ? "Kodunuz 25.12.2025 tarihine kadar geçerlidir."
       : "Kodunuz 24 saat geçerlidir.";
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-6 text-center gap-6">
       <h1 className="text-3xl font-bold text-[#212121]">Kodunuz Hazır!</h1>
-      <p className="text-black text-xs md:text-md max-w-lg">
+      <p className="text-[#1D1D1B] text-xs md:text-md max-w-lg">
         Kişisel indirim kodunuzu e-posta adresinize gönderdik.
         <br />
         Bu kodu, ödeme sayfasında ilgili alana girerek kullanabilirsiniz.
@@ -35,15 +35,9 @@ export default function CodeReady({ type }) {
       <div className="flex flex-col gap-4 w-full max-w-md">
         <button
           onClick={() => router.push("/")}
-          className="bg-black text-white p-2 font-semibold rounded transform transition-transform duration-200 hover:scale-105"
+          className="bg-[#1D1D1B] cursor-pointer text-white p-2 font-semibold rounded transform transition-transform duration-200 hover:scale-105"
         >
           ANASAYFAYA DÖN
-        </button>
-        <button
-          onClick={() => router.push("/shop")}
-          className="bg-[#E3963E] text-white p-2 font-semibold rounded transform transition-transform duration-200 hover:scale-105"
-        >
-          ÜRÜNLERİ İNCELE
         </button>
       </div>
 
