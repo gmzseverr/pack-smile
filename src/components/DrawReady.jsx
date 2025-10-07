@@ -25,7 +25,8 @@ export default function DrawReady() {
       </h1>
       <p className="text-[#1D1D1B] text-sm md:text-md max-w-lg">
         Size özel çekiliş kodunuzu ve tüm detayları e-posta adresinize
-        gönderdik. <br /> Kutuyu veya spam klasörünü kontrol etmeyi unutmayın.
+        gönderdik. <br /> Gelen kutunuzu veya spam klasörünü kontrol etmeyi
+        unutmayın.
       </p>
 
       {/* Butonlar */}

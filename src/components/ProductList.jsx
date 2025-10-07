@@ -113,13 +113,11 @@ export default function ProductList() {
           </Button>
         </div>
 
-        <div className="w-full lg:w-2/5 flex justify-center mb-6 lg:mb-0">
-          {" "}
-          {/* Daha fazla yer açmak için genişliği 2/5 yaptık */}
+        <div className="w-full lg:w-1/3 flex justify-center mb-6 lg:mb-0">
           <img
-            src="/1.png"
+            src="/shop-page.png"
             alt="Shop"
-            className="w-full max-h-80 lg:max-h-96 object-contain" // max-h değerini artırdık ve w-full ekledik
+            className="max-h-60 object-contain"
           />
         </div>
       </div>
